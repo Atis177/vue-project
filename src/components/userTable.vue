@@ -4,24 +4,22 @@
       <tr>
         <th>#</th>
         <th>Имя</th>
-        <th>Фамилия</th>
-        <th>Активен</th>
-        <th>Баланс</th>
+        <th>Имя пользователя</th>
+        <th>Адрес</th>
         <th>Email</th>
         <th>Телефон</th>
-        <th>Зарегистрирован</th>
+        <th>Сайт</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="item in users" v-bind:key="item.id">
         <td># {{ item.id }}</td>
-        <td>{{ item.firstName }}</td>
-        <td>{{ item.lastName }}</td>
-        <td>{{ item.isActive }}</td>
-        <td>{{ item.balance }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.username }}</td>
+        <td>{{ item.address.street }}</td>
         <td>{{ item.email }}</td>
         <td>{{ item.phone }}</td>
-        <td>{{ item.registered }}</td>
+        <td>{{ item.website }}</td>
       </tr>
     </tbody>
     <tfoot>

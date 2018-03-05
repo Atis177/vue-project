@@ -26,7 +26,7 @@
         },
         methods: {
             loadData: function() {
-                axios.get('http://localhost:3004/users').then(({data}) => {
+                axios.get('https://jsonplaceholder.typicode.com/users').then(({data}) => {
                     this.users = data
                 })
             }
