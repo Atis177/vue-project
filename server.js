@@ -11,9 +11,9 @@ var jsonServer = require('json-server');
 var server = jsonServer.create();
 var router = jsonServer.router('db.json');
 var middlewares = jsonServer.defaults();
-var jsonPort = Number(process.env.PORT || 3004);
+
 server.use(middlewares);
 server.use(router);
-server.listen(jsonPort, function () {
+server.listen(3004, function () {
     console.log('JSON Server is running')
 });
