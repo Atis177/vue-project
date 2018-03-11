@@ -4,22 +4,26 @@
       <tr>
         <th>#</th>
         <th>Имя</th>
-        <th>Имя пользователя</th>
-        <th>Адрес</th>
+        <th>Фамилия</th>
+        <th>Активен</th>
+        <th>Баланс</th>
         <th>Email</th>
         <th>Телефон</th>
-        <th>Сайт</th>
+        <th>Зарегистрирован</th>
       </tr>
     </thead>
     <tbody>
       <tr v-for="item in users" v-bind:key="item.id">
-        <td># {{ item.id }}</td>
-        <td>{{ item.name }}</td>
-        <td>{{ item.username }}</td>
-        <td>{{ item.address.street }}</td>
+        <td>
+         <router-link :to="'/user/edit/' + item.id">#{{ item.id }}</router-link>
+        </td>
+        <td>{{ item.firstName }}</td>
+        <td>{{ item.lastName }}</td>
+        <td>{{ item.isActive }}</td>
+        <td>{{ item.balance }}</td>
         <td>{{ item.email }}</td>
         <td>{{ item.phone }}</td>
-        <td>{{ item.website }}</td>
+        <td>{{ item.registered }}</td>
       </tr>
     </tbody>
     <tfoot>

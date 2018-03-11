@@ -11,22 +11,22 @@
 </template>
 
 <script>
-    import axios from 'axios'
-    import userTable from '@/components/userTable.vue'
+    import axios from '@/axios.js'
 
     export default {
         name: 'UsersListPage',
         components: {
-            userTable
+            userTable : () => import('@/components/userTable.vue')
         },
         data: function() {
             return {
-                users: []
+                users: [],
+                restUrl: '/users'
             }
         },
         methods: {
             loadData: function() {
-                axios.get('https://jsonplaceholder.typicode.com/users').then(({data}) => {
+                axios.get(this.restUrl).then(({data}) => {
                     this.users = data
                 })
             }
