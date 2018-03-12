@@ -39,9 +39,9 @@
     <div class="form-group">
       <label>Аватарка</label>
       <div><img class="img-thumbnail" :src="user.picture"></div>
+      <button type="button" @click="selectNewImage">Выбрать новую</button>
       <input type="email" class="form-control" v-model="user.picture" />
       <input type="file" class="hidden" ref="imageUpload" @change="upload">
-      <button type="button" @click="selectNewImage">Выбрать новую</button>
     </div>
 
   </div>
