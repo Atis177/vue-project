@@ -2,14 +2,17 @@
     <div>
         <h3>Список пользователей</h3>
 
-        <rows-per-page :users.sync="users"></rows-per-page>
+        <rows-per-page
+                :users.sync="users"
+                :currentPage.sync="currentPage"
+                :selectedPerPage.sync="selectedPerPage" />
 
         <div v-if="!users.length" class="alert alert-warning">
             Загрузка...
         </div>
         <user-table v-else v-bind:users="users"></user-table>
 
-        <rows-paginator></rows-paginator>
+        <rows-paginator :users.sync="users" :currentPage.sync="currentPage" :selectedPerPage.sync="selectedPerPage"></rows-paginator>
     </div>
 </template>
 
@@ -29,6 +32,8 @@
             return {
                 users: [],
                 restUrl: '/users',
+                currentPage: '',
+                selectedPerPage: ''
             }
         },
 

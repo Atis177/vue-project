@@ -12,15 +12,29 @@
 
     export default {
         name: 'RowsPerPage',
-        props: ['users'],
+        props: {
+            users: {
+                type: Array,
+                required: true
+            },
+
+            currentPage: {
+                type: String
+            },
+
+            selectedPerPage: {
+                type: String
+            }
+        },
         data: () => ({
             list: [2, 5, 10, 100],
             restUrl: '/users'
         }),
         methods: {
             changed(value) {
-                axios.get(`${this.restUrl}?_limit=${value}`).then(({data}) => {
-                    this.$emit('update:users', data)
+                axios.get(`${this.restUrl}?_limit=${value}&_page=${this.currentPage}`).then(({data}) => {
+                    this.$emit('update:users', data);
+                    this.$emit('update:selectedPerPage', value);
                 });
             }
         }
