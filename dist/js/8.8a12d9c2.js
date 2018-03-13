@@ -1,0 +1,2 @@
+webpackJsonp([8],{HPrd:function(e,t,n){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var r={name:"rowsPaginator",props:{},methods:{}},l=function(){var e=this,t=e.$createElement,n=e._self._c||t;return n("p",[e._v("пагинация")])},a=[],o=n("XyMi"),s=!1,u=null,c=null,i=null,p=Object(o["a"])(r,l,a,s,u,c,i);t["default"]=p.exports}});
+//# sourceMappingURL=8.8a12d9c2.js.map
