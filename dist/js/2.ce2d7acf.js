@@ -1,2 +1,0 @@
-webpackJsonp([2],{"2NXm":function(e,n,t){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var l={name:"IndexPage"},u=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("div",[e._v("\n    Стартовая страница\n")])},a=[],r=t("XyMi"),c=!1,i=null,s=null,o=null,d=Object(r["a"])(l,u,a,c,i,s,o);n["default"]=d.exports}});
-//# sourceMappingURL=2.ce2d7acf.js.map

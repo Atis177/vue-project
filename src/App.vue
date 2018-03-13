@@ -3,12 +3,15 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <router-link tag="li" class="nav-item" exact to="/">
+                <router-link tag="li" class="nav-item" exact to="/">
                   <a class="nav-link">Главная</a>
-              </router-link>
-              <router-link tag="li" class="nav-item" to="/users">
+                </router-link>
+                <router-link tag="li" class="nav-item" to="/users">
                   <a class="nav-link">Список пользователей</a>
-              </router-link>
+                </router-link>
+                <router-link tag="li" class="nav-item" to="/user/add">
+                    <a class="nav-link">Добавить нового пользователя</a>
+                </router-link>
             </ul>
         </div>
     </nav>

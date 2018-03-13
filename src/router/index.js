@@ -20,6 +20,10 @@ export default new Router({
         {
             path: '/user/edit/:id',
             component: () => import('@/pages/userEdit.vue')
+        },
+        {
+            path: '/user/add',
+            component: () => import('@/pages/userAdd.vue')
         }
     ]
 })
