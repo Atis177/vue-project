@@ -8,8 +8,8 @@
 
          <template v-else>
              <user-form v-model="user"></user-form>
-             <button type="button" @click="save">Сохранить</button>
-             <button type="button" @click="remove">Удалить</button>
+             <button class="btn btn-success" type="button" @click="save">Сохранить</button>
+             <button class="btn btn-danger" type="button" @click="remove">Удалить</button>
          </template>
      </div>
 </template>

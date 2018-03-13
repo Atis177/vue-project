@@ -1,7 +1,7 @@
 <template>
     <div>
         <user-form :user="user"></user-form>
-        <button type="button" @click="save">Сохранить</button>
+        <button class="btn btn-success" type="button" @click="save">Сохранить</button>
     </div>
 </template>
 
@@ -16,14 +16,12 @@
         },
 
         data: () => ({
-            user: {},
-            restUrl: '/users',
-            loading: true
+            user: {
+                isActive: false,
+                picture: 'http://placehold.it/128x128',
+            },
+            restUrl: '/users'
         }),
-
-        mounted() {
-
-        },
 
         methods: {
             redirectToList(id) {

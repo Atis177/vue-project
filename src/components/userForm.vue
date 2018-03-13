@@ -1,43 +1,59 @@
 <template>
   <div>
 
-    <div class="form-group">
-      <label>Имя</label>
-      <input type="text" class="form-control" v-model="user.firstName" />
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Имя</label>
+          <input type="text" class="form-control" v-model="user.firstName" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Фамилия</label>
+          <input type="text" class="form-control" v-model="user.lastName" />
+        </div>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label>Фамилия</label>
-      <input type="text" class="form-control" v-model="user.lastName" />
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Баланс</label>
+          <input type="text" class="form-control" v-model="user.balance" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Телефон</label>
+          <input type="text" class="form-control" v-model="user.phone" />
+        </div>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label>Баланс</label>
-      <input type="text" class="form-control" v-model="user.balance" />
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Адрес</label>
+          <input type="text" class="form-control" v-model="user.address" />
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-group">
+          <label>Компания</label>
+          <input type="text" class="form-control" v-model="user.company" />
+        </div>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label>Телефон</label>
-      <input type="text" class="form-control" v-model="user.phone" />
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" class="form-control" v-model="user.email" />
+        </div>
+      </div>
+      <div class="col">
+        <upload-photo :user="user"></upload-photo>
+      </div>
     </div>
-
-    <div class="form-group">
-      <label>Адрес</label>
-      <input type="text" class="form-control" v-model="user.address" />
-    </div>
-
-    <div class="form-group">
-      <label>Компания</label>
-      <input type="text" class="form-control" v-model="user.company" />
-    </div>
-
-    <div class="form-group">
-      <label>Email</label>
-      <input type="email" class="form-control" v-model="user.email" />
-    </div>
-
-    <upload-photo :user="user"></upload-photo>
-
   </div>
 </template>
 
@@ -62,13 +78,3 @@ export default {
     }
 }
 </script>
-
-<style>
-    .hidden {
-        display: none;
-    }
-
-    .img-thumbnail {
-        max-width: 300px;
-    }
-</style>

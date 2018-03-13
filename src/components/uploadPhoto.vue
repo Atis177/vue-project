@@ -2,8 +2,7 @@
     <div class="form-group">
         <label>Аватарка</label>
         <div><img class="img-thumbnail" :src="user.picture"></div>
-        <button type="button" @click="selectNewImage">Выбрать новую</button>
-        <input type="email" class="form-control" v-model="user.picture" />
+        <button class="btn btn-info" type="button" @click="selectNewImage">Выбрать новую</button>
         <input type="file" class="hidden" ref="imageUpload" @change="upload">
     </div>
 </template>
@@ -48,3 +47,17 @@
         }
     }
 </script>
+
+<style>
+    .btn {
+        margin: 1rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .img-thumbnail {
+        max-width: 300px;
+    }
+</style>
