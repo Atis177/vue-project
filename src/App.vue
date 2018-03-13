@@ -3,10 +3,10 @@
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
-              <router-link tag="li" class="nav-item" active-class="active" exact to="/">
+              <router-link tag="li" class="nav-item" exact to="/">
                   <a class="nav-link">Главная</a>
               </router-link>
-              <router-link tag="li" class="nav-item" active-class="active" to="/users">
+              <router-link tag="li" class="nav-item" to="/users">
                   <a class="nav-link">Список пользователей</a>
               </router-link>
             </ul>
@@ -26,9 +26,3 @@ export default {
   name: 'app'
 }
 </script>
-
-<style>
-#app {
-
-}
-</style>

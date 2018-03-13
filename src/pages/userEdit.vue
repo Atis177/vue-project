@@ -40,13 +40,17 @@
             }
         },
 
+        mounted() {
+            this.loadData();
+        },
+
         methods: {
             loadData() {
                 this.loading = true;
 
                 axios.get(this.url)
-                    .then(responce => responce.data)
-                    .then(responce => (this.user = responce))
+                    .then(response => response.data)
+                    .then(response => (this.user = response))
                     .then(() => (this.loading = false))
             },
 
@@ -63,10 +67,6 @@
                 axios.delete(this.url)
                     .then(() => this.redirectToList())
             }
-        },
-
-        mounted() {
-            this.loadData();
         }
     }
 </script>

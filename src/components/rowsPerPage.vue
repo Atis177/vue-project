@@ -1,28 +1,38 @@
 <template>
-    <select class="form-control" @input="changed($event.target.value)">
-        <option value="">Выбрать кол-во пользователей на странице</option>
-        <option v-for="item in list" :key="item" :value="item">
-            {{ item }}
-        </option>
-    </select>
+    <div class="col-sm-2">
+        <select v-model="selectedPerPage" class="form-control" @input="changed($event.target.value)">
+            <option v-for="item in list" :key="item" :value="item">
+                {{ item }}
+            </option>
+        </select>
+    </div>
 </template>
 
 <script>
-    import axios from '@/axios.js';
-
     export default {
         name: 'RowsPerPage',
-        props: ['users'],
+
+        props: {
+            selectedPerPage: {
+                type: Number,
+                required: true
+            }
+        },
+
         data: () => ({
-            list: [2, 5, 10, 100],
-            restUrl: '/users'
+            list: [2, 5, 10, 100]
         }),
+
         methods: {
             changed(value) {
-                axios.get(`${this.restUrl}?_limit=${value}`).then(({data}) => {
-                    this.$emit('update:users', data)
-                });
+                this.$emit('changePerPage', value);
             }
         }
     }
 </script>
+
+<style scoped>
+    .form-control {
+        margin-bottom: 2rem;
+    }
+</style>
