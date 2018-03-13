@@ -22,19 +22,24 @@
                 type: String
             },
 
-            selectedPerPage: {
-                type: String
+            usersCount: {
+                type: Number
+            },
+
+            pagesCount: {
+                type: Number
             }
         },
         data: () => ({
             list: [2, 5, 10, 100],
-            restUrl: '/users'
+            restUrl: '/users',
         }),
         methods: {
             changed(value) {
                 axios.get(`${this.restUrl}?_limit=${value}&_page=${this.currentPage}`).then(({data}) => {
                     this.$emit('update:users', data);
                     this.$emit('update:selectedPerPage', value);
+                    this.$emit('update:pagesCount', Math.round(this.usersCount/data.length));
                 });
             }
         }

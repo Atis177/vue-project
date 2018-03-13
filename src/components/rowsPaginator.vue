@@ -1,8 +1,6 @@
 <template>
     <div>
-        <button v-on:click="changePage">1</button>
-        <button v-on:click="changePage">2</button>
-        <button v-on:click="changePage">3</button>
+        <button v-for="number in pagesCount" v-bind:key="number" v-on:click="changePage">{{number}}</button>
     </div>
 </template>
 
@@ -18,12 +16,16 @@
                 required: true
             },
 
-            currentPage: {
+            selectedPerPage:{
                 type: String
             },
 
-            selectedPerPage:{
-                type: String
+            usersCount:{
+                type: Number
+            },
+
+            pagesCount: {
+                type: Number
             }
         },
         data: () => ({
