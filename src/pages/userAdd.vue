@@ -1,6 +1,6 @@
 <template>
     <div>
-        <user-form :user="user"></user-form>
+        <user-form v-model="user"></user-form>
         <button class="btn btn-success" type="button" @click="save">Сохранить</button>
     </div>
 </template>

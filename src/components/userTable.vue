@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr v-for="item in users" v-bind:key="item.id">
+      <tr v-for="item in users" :key="item.id">
         <td>
          <router-link :to="'/user/edit/' + item.id">#{{ item.id }}</router-link>
         </td>

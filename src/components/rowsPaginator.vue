@@ -1,11 +1,15 @@
 <template>
     <div>
         <ul class="pagination">
-            <li class="page-item" :class="{ disabled: currentPage == 1}"><a class="page-link" @click.prevent="prevPage" href="#"> Назад </a></li>
+            <li class="page-item" :class="{ disabled: currentPage == 1}">
+                <a class="page-link" @click.prevent="prevPage" href="#">Назад </a>
+            </li>
             <li v-for="number in pagesCount" :class="{ active: currentPage == number}" :key="number" class="page-item">
                 <a class="page-link" @click.prevent="changePage(number)" href="#">{{number}}</a>
             </li>
-            <li class="page-item" :class="{ disabled: currentPage == pagesCount}"><a class="page-link" @click.prevent="nextPage" href="#"> Вперед </a></li>
+            <li class="page-item" :class="{ disabled: currentPage == pagesCount}">
+                <a class="page-link" @click.prevent="nextPage" href="#"> Вперед </a>
+            </li>
         </ul>
     </div>
 </template>

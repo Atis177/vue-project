@@ -1,6 +1,6 @@
 <template>
     <div class="col-sm-2">
-        <select v-model="selectedPerPage" class="form-control" @input="changed($event.target.value)">
+        <select :selectedPerPage="selectedPerPage" class="form-control" @input="changed($event.target.value)">
             <option v-for="item in list" :key="item" :value="item">
                 {{ item }}
             </option>

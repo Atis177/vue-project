@@ -2,14 +2,20 @@
     <div>
         <h3>Список пользователей</h3>
 
-        <rows-per-page :selectedPerPage="selectedPerPage" v-on:changePerPage="changePerPage"/>
+        <rows-per-page
+                :selectedPerPage="selectedPerPage"
+                @changePerPage="changePerPage"/>
 
         <div v-if="!users.length" class="alert alert-warning">
             Загрузка...
         </div>
         <user-table v-else :users="users"></user-table>
 
-        <rows-paginator v-model="currentPage" :usersCount="usersCount" :selectedPerPage="selectedPerPage" v-on:changeNumberPage="changeNumberPage"/>
+        <rows-paginator
+                v-model="currentPage"
+                :usersCount="usersCount"
+                :selectedPerPage="selectedPerPage"
+                @changeNumberPage="changeNumberPage"/>
     </div>
 </template>
 
@@ -44,12 +50,12 @@
                 axios.get(`${this.restUrl}?_limit=${this.selectedPerPage}&_page=${this.currentPage}`)
                     .then((response) => {
                         this.users = response.data;
-                        this.usersCount = parseInt(response.headers['x-total-count']);
+                        this.usersCount = parseInt(response.headers['x-total-count'], 10);
                     });
             },
 
             changePerPage: function(value) {
-                this.selectedPerPage = parseInt(value);
+                this.selectedPerPage = parseInt(value, 10);
                 this.loadData();
             },
 
